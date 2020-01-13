@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import AutocompleteText from './AutocompleteText';
 
-function App() {
+class App extends Component{
+  render() {
   return (
     <div className="App">
       <AutocompleteText />
     </div>
   );
+  }
 }
 
 export default App;
