@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import './App.css';
-import AutocompleteText from './AutocompleteText';
+import AutocompleteText from './pages/AutocompleteText';
+import GlobalStyle from './styles/global';
 
 class App extends Component{
   render() {
-  return (
-    <div className="App">
-      <AutocompleteText />
-    </div>
-  );
+    return (
+      <div className="App">
+        <AutocompleteText />
+        <GlobalStyle />
+      </div>
+    );
   }
 }
 
