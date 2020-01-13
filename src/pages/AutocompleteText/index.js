@@ -6,11 +6,6 @@ export default class AutocompleteText extends React.Component {
 
   constructor (props) {
     super(props);
-    this.cities = [
-      'Manaus',
-      'Maceió',
-      'Arapiraca',
-    ];
     this.state = {
       suggestions: [],
       text: '',
@@ -18,12 +13,13 @@ export default class AutocompleteText extends React.Component {
   }
 
   onTextChanged = (e) => {
+    const { countries } = this.props;
     const value = e.target.value;
     let suggestions = [];
 
     if (value.length > 0) {
       const regex = new RegExp(`^${value}`, 'i');
-      suggestions = this.cities.sort().filter(v => regex.test(v));
+      suggestions = countries.sort().filter(v => regex.test(v));
     }
     this.setState(() => ({suggestions, text: value}));
   }
@@ -60,7 +56,7 @@ export default class AutocompleteText extends React.Component {
       <Box>
         <input
         value={text}
-        placeholder="Onde você mora?"
+        placeholder="Você mora em qual país?"
         type="text"
         onChange={this.onTextChanged}
         />
