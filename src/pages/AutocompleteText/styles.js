@@ -44,3 +44,10 @@ export const Box = styled.div`
     text-decoration:underline;
   }
 `;
+
+export const SnackBox = styled.div`
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  display: block;
+`;
