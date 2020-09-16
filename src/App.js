@@ -7,7 +7,7 @@ class App extends Component{
   render() {
     return (
       <div className="App">
-        <AutocompleteText countries={countries}/>
+        <AutocompleteText countries={countries} />
         <GlobalStyle />
       </div>
     );

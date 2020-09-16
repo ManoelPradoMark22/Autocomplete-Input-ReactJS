@@ -1,5 +1,9 @@
 import React from 'react';
 
+import WifiOffIcon from '@material-ui/icons/WifiOff';
+
+import SnackbarContent from '../../components/Snackbar/SnackbarContent';
+
 import { Box } from './styles';
 
 export default class AutocompleteText extends React.Component {
@@ -53,6 +57,7 @@ export default class AutocompleteText extends React.Component {
   render () {
     const {text} = this.state;
     return (
+      <>
       <Box>
         <input
         value={text}
@@ -62,6 +67,16 @@ export default class AutocompleteText extends React.Component {
         />
         {this.renderSuggestions()}
       </Box>
+      <SnackbarContent
+        message={
+          <span>
+            <b>OFFLINE:</b> Você está offline, verifique sua conexão...
+          </span>
+        }
+        color="warning"
+        icon={WifiOffIcon}
+      />
+      </>
     )
 }
 }
